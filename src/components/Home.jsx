@@ -11,9 +11,10 @@ const Home = () => {
     >
       <motion.div
         className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+        initial={{ opacity: 0, translateX: -50 }}
+        whileInView={{ opacity: 1, translateX: 0 }}
+        transition={{ delay: 0.3, duration: 0.3 }}
+        viewport={{ once: true }}
       >
         <div 
           className='flex flex-col justify-center mt-40 lg:mt-60 h-full'>

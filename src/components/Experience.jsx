@@ -94,27 +94,36 @@ const Experience = () => {
         name="experience" 
         className='bg-gradient-to-b from-gray-800 to-black w-full min-h-screen'
     >
-        <motion.div 
-            className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white'
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-        >
-            <div className='space-y-4 mt-40'>
+        <div 
+            className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white'>
+            <motion.div 
+                className='space-y-4 mt-40'
+                initial={{ opacity: 0, translateX: -50 }}
+                whileInView={{ opacity: 1, translateX: 0 }}
+                transition={{ delay: 0.3, duration: 0.3 }}
+                viewport={{ once: true }}
+            >
                 <p className='font-logo inline text-white uppercase font-bold text-4xl sm:text-7xl border-b-2 border-gray-400'>Experience</p>
                 <p className='text-gray-400 sm:text-lg'>Constantly evolving, working with diverse tech stacks.</p>
-            </div>
+            </motion.div>
 
             <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0'>
-                {techStack.map( ({ id, src, title, style }) => (
-                    <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 flex flex-col justify-around rounded-lg cursor-pointer ${style}`}>
+                {techStack.map( ({ id, src, title, style }, i) => (
+                    <motion.div 
+                        key={id} 
+                        className={`shadow-md hover:scale-105 duration-500 py-2 flex flex-col justify-around rounded-lg cursor-pointer ${style}`}
+                        initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                        whileInView={{ opacity: 1, translateX: 0, translateY: 0 }}
+                        transition={{ type: "tween", duration: 0.3, delay: i * 0.02 }}
+                        viewport={{ once: true }}
+                    >
                         <img src={src} alt="" className='w-10 mx-auto'/>
                         <p className='mt-4'>{title}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 
-        </motion.div>
+        </div>
 
     </div>
   )

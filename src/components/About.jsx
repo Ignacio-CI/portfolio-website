@@ -9,9 +9,10 @@ const About = () => {
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <motion.div 
           className="space-y-8 mt-40"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          initial={{ opacity: 0, translateX: -50 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          transition={{ delay: 0.3, duration: 0.3 }}
+          viewport={{ once: true }}
         >
             <p className="font-logo inline text-white uppercase font-bold text-4xl sm:text-7xl border-b-2 border-gray-400">About</p>
 

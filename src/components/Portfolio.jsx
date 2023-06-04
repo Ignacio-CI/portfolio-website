@@ -60,21 +60,30 @@ const Portfolio = () => {
     ];
   return (
     <div name="portfolio" className='bg-gradient-to-b from-black to-gray-800 w-full text-white min-h-screen'>
-      <motion.div 
-        className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+      <div 
+        className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
+        <motion.div 
+            className='space-y-4 mt-40'
+            initial={{ opacity: 0, translateX: -50 }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            transition={{ delay: 0.3, duration: 0.3 }}
+            viewport={{ once: true }}
         >
-        <div className='space-y-4 mt-40'>
             <p className='font-logo inline text-white uppercase font-bold text-4xl sm:text-7xl border-b-2 border-gray-400'>Portfolio</p>
             <p className='text-gray-400 sm:text-lg'>Check out some of my work right here.</p>
-        </div>
+        </motion.div>
 
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 mt-8'>
         {
-            portfolios.map(({ id, src, title, demo, code, disabled }) => (
-            <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
+            portfolios.map(({ id, src, title, demo, code, disabled }, i) => (
+            <motion.div 
+                key={id} 
+                className='shadow-md shadow-gray-600 rounded-lg'
+                initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                whileInView={{ opacity: 1, translateX: 0, translateY: 0 }}
+                transition={{ type: "tween", duration: 0.3, delay: i * 0.02 }}
+                viewport={{ once: true }}
+            >
                 <div className='h-2/3'>
                     <img 
                         src={src} 
@@ -100,12 +109,12 @@ const Portfolio = () => {
                     >Code
                     </button>
                 </div>
-            </div>
+            </motion.div>
             ))
         }
         </div>
 
-      </motion.div>
+      </div>
     </div>
   )
 }
