@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import html from '../assets/experience/html.png';
 import css from '../assets/experience/css.png';
 import javascript from '../assets/experience/javascript.png';
@@ -93,7 +94,12 @@ const Experience = () => {
         name="experience" 
         className='bg-gradient-to-b from-gray-800 to-black w-full min-h-screen'
     >
-        <div className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white'>
+        <motion.div 
+            className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+        >
             <div className='space-y-4 mt-40'>
                 <p className='font-logo inline text-white uppercase font-bold text-4xl sm:text-7xl border-b-2 border-gray-400'>Experience</p>
                 <p className='text-gray-400 sm:text-lg'>Constantly evolving, working with diverse tech stacks.</p>
@@ -108,7 +114,7 @@ const Experience = () => {
                 ))}
             </div>
 
-        </div>
+        </motion.div>
 
     </div>
   )

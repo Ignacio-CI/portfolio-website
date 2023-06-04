@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import veterinary from '../assets/portfolio/veterinaria.png';
 import emailSubscribe from '../assets/portfolio/email-subscribe-twcss.png';
 import pricingCards from '../assets/portfolio/pricing-cards-1.png';
@@ -59,7 +60,12 @@ const Portfolio = () => {
     ];
   return (
     <div name="portfolio" className='bg-gradient-to-b from-black to-gray-800 w-full text-white min-h-screen'>
-      <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
+      <motion.div 
+        className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        >
         <div className='space-y-4 mt-40'>
             <p className='font-logo inline text-white uppercase font-bold text-4xl sm:text-7xl border-b-2 border-gray-400'>Portfolio</p>
             <p className='text-gray-400 sm:text-lg'>Check out some of my work right here.</p>
@@ -99,7 +105,7 @@ const Portfolio = () => {
         }
         </div>
 
-      </div>
+      </motion.div>
     </div>
   )
 }
