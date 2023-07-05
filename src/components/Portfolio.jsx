@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import veterinary from '../assets/portfolio/veterinaria.png';
-import emailSubscribe from '../assets/portfolio/email-subscribe-twcss.png';
+import budgetPlanner from '../assets/portfolio/budget-planner.png';
 import pricingCards from '../assets/portfolio/pricing-cards-1.png';
 import FavoritePosts from '../assets/portfolio/favorite_posts_vue.png';
 import realEstate from '../assets/portfolio/real_estate.png';
@@ -18,17 +18,17 @@ const Portfolio = () => {
         },
         {
             id: 2,
-            src: emailSubscribe,
-            title: 'Email Subscribe',
-            demo: 'https://ignacio-ci.github.io/email-subscribe-tailwindcss-miniproject-1/',
-            code: 'https://github.com/Ignacio-CI/email-subscribe-tailwindcss-miniproject-1',
+            src: budgetPlanner,
+            title: 'Planificador Presupuesto',
+            demo: 'https://presupuesto-react-ashy.vercel.app/',
+            code: 'https://github.com/Ignacio-CI/budget_planner_react',
             disabled: false
 
         },
         {
             id: 3,
             src: pricingCards,
-            title: 'Pricing Cards',
+            title: 'Pricing Cards (only TailwindCSS)',
             demo: 'https://ignacio-ci.github.io/pricing-grids-tailwindcss-miniproject-2/',
             code: 'https://github.com/Ignacio-CI/pricing-grids-tailwindcss-miniproject-2',
             disabled: false
