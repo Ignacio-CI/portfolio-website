@@ -112,9 +112,9 @@ const Experience = () => {
                     <motion.div 
                         key={id} 
                         className={`shadow-md hover:scale-105 duration-500 py-2 flex flex-col justify-around rounded-lg cursor-pointer ${style}`}
-                        initial={{ opacity: 0, translateX: -50, translateY: -50 }}
-                        whileInView={{ opacity: 1, translateX: 0, translateY: 0 }}
-                        transition={{ type: "tween", duration: 0.3, delay: i * 0.02 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ type: "tween", duration: 1, delay: i * 0.02 }}
                         viewport={{ once: true }}
                     >
                         <img src={src} alt="" className='w-10 mx-auto'/>

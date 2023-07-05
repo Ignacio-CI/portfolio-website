@@ -79,9 +79,9 @@ const Portfolio = () => {
             <motion.div 
                 key={id} 
                 className='shadow-md shadow-gray-600 rounded-lg'
-                initial={{ opacity: 0, translateX: -50, translateY: -50 }}
-                whileInView={{ opacity: 1, translateX: 0, translateY: 0 }}
-                transition={{ type: "tween", duration: 0.3, delay: i * 0.02 }}
+                initial={{ opacity: 0, translateX: -50 }}
+                whileInView={{ opacity: 1, translateX: 0 }}
+                transition={{ type: "tween", duration: 0.5, delay: i * 0.02 }}
                 viewport={{ once: true }}
             >
                 <div className='h-2/3'>
