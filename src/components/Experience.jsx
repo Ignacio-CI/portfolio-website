@@ -7,7 +7,7 @@ import tailwindcss from '../assets/experience/tailwind-css.png';
 import nodejs from '../assets/experience/Nodejs.png';
 import redis from '../assets/experience/Redis.png';
 import mongodb from '../assets/experience/MongoDB.png';
-import mysql from '../assets/experience/mysql.png';
+import mysql from '../assets/experience/MySQL.png';
 import nextjs from '../assets/experience/nextjs.png';
 import git from '../assets/experience/Git.png';
 import jira from '../assets/experience/Jira.png';
