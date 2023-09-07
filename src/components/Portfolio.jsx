@@ -1,10 +1,12 @@
 import { motion } from "framer-motion"
+import { container, item, title } from '../helpers/animations.js'
 import veterinary from '../assets/portfolio/veterinaria.png';
 import budgetPlanner from '../assets/portfolio/budget-planner.png';
 import pricingCards from '../assets/portfolio/pricing-cards-1.png';
 import FavoritePosts from '../assets/portfolio/favorite_posts_vue.png';
 import realEstate from '../assets/portfolio/real_estate.png';
 import socialBuddies from '../assets/portfolio/social_buddies.png';
+
 
 const Portfolio = () => {
     const portfolios = [
@@ -59,30 +61,32 @@ const Portfolio = () => {
         },
     ];
   return (
-    <div name="portfolio" className='bg-gradient-to-b from-black to-gray-800 w-full text-white min-h-screen'>
+    <div name="portfolio" className='bg-gradient-to-b from-slate-100 via-slate-100 to-slate-200 dark:from-black dark:to-gray-800 w-full min-h-screen'>
       <div 
         className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
         <motion.div 
             className='space-y-4 mt-40'
-            initial={{ opacity: 0, translateX: -50 }}
-            whileInView={{ opacity: 1, translateX: 0 }}
-            transition={{ delay: 0.3, duration: 0.3 }}
+            variants={title}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
         >
-            <p className='font-logo inline text-white uppercase font-bold text-4xl sm:text-7xl border-b-2 border-gray-400'>Portfolio</p>
-            <p className='text-gray-400 sm:text-lg'>Check out some of my work right here.</p>
+            <p className='font-logo inline text-black dark:text-white uppercase font-bold text-4xl sm:text-7xl border-b-2 border-gray-400'>Portfolio</p>
+            <p className='text-gray-800 dark:text-gray-400 sm:text-lg'>Check out some of my work right here.</p>
         </motion.div>
 
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 mt-8'>
-        {
-            portfolios.map(({ id, src, title, demo, code, disabled }, i) => (
-            <motion.div 
+        <motion.ul 
+            className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 mt-8'
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+        >
+        {portfolios.map(({ id, src, title, demo, code, disabled }, i) => (
+            <motion.li 
                 key={id} 
                 className='shadow-md shadow-gray-600 rounded-lg'
-                initial={{ opacity: 0, translateX: -50 }}
-                whileInView={{ opacity: 1, translateX: 0 }}
-                transition={{ type: "tween", duration: 0.5, delay: i * 0.02 }}
-                viewport={{ once: true }}
+                variants={item}
             >
                 <div className='h-2/3'>
                     <img 
@@ -91,28 +95,28 @@ const Portfolio = () => {
                         className='rounded-md object-contain hover:scale-105 duration-200'
                     />
                     <div className='w-full p-2'>
-                        <p className='text-gray-400 text-center'>{title}</p>
+                        <p className='text-gray-700 dark:text-gray-400 text-center'>{title}</p>
                         <img src="" alt="" />
                     </div>
                 </div>
                 <div className='flex items-end justify-center h-1/3'>
                     <button 
                         onClick={() => window.open(demo, '_blank')}
-                        className='w-1/2 px-6 py-3 m-4 hover:scale-105 duration-200'
+                        className='w-1/2 px-6 py-3 m-4 text-black dark:text-white hover:text-gray-600 transition-colors duration-200'
                         disabled={disabled}
                     >Demo
                     </button>
 
                     <button
                         onClick={() => window.open(code, '_blank')} 
-                        className='w-1/2 px-6 py-3 m-4 hover:scale-105 duration-200'
+                        className='w-1/2 px-6 py-3 m-4 text-black dark:text-white hover:text-gray-600 hover:border-1 hover:border-black transition-colors duration-200'
                     >Code
                     </button>
                 </div>
-            </motion.div>
+            </motion.li>
             ))
         }
-        </div>
+        </motion.ul>
 
       </div>
     </div>

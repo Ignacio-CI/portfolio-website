@@ -29,14 +29,14 @@ const Header = () => {
     ]
 
     return (
-        <div className="flex justify-between items-center w-full h-20 fixed p-2 z-10 text-slate-100 backdrop-blur shadow-xl">
+        <div className="flex justify-between items-center w-full h-20 fixed p-2 z-10 text-slate-100 backdrop-blur shadow-sm">
             <div className='ml-4'>
-                <h1 className="uppercase font-signature text-5xl text-gray-300 font-bold">ic</h1>
+                <h1 className="uppercase font-signature text-5xl text-gray-800 dark:text-gray-400 font-bold">ic</h1>
             </div>
 
             <ul className="hidden md:flex">
                 {navLinks.map( ({id, link}) => 
-                    <li key={id} className="px-4 cursor-pointer capitalize text-slate-300 hover:text-slate-100 duration-200"><Link to={link} smooth duration={500}>{link}</Link></li>
+                    <li key={id} className="px-4 font-extralight cursor-pointer text-lg uppercase text-black dark:text-white hover:text-sky-400 dark:hover:text-sky-400 duration-200 active:text-sky-400"><Link to={link} smooth duration={500}>{link}</Link></li>
                 )}
                 
             </ul>
