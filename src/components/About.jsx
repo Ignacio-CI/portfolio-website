@@ -1,13 +1,14 @@
 import { motion } from "framer-motion"
 import { title } from "../helpers/animations"
+import HeroImage from '../assets/heroImage.png';
 
 const About = () => {
   return (
-    <div 
+    <div
         name="about"
         className="w-full min-h-screen bg-gradient-to-b from-slate-200 to-slate-100 dark:from-gray-800 dark:to-black"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+      <div className="max-w-screen-lg min-h-screen p-4 mx-auto flex flex-col justify-center w-full h-full">
         <motion.div 
           className="space-y-8 mt-40"
           variants={title}
@@ -24,6 +25,7 @@ const About = () => {
             <p className="text-gray-700 dark:text-gray-400 sm:text-lg">Away from the world of code, you&apos;ll often find me enveloped in the universal language of music, playing and creating melodies that stir the soul. This passion for music, like my love for web development, stems from a deep-seated desire to create and inspire. Let&apos;s traverse the boundless possibilities of the web together, intertwining lines of code with notes of music, fostering a symphony of innovation and harmony along the way!</p>
         </motion.div>
       </div>
+      
     </div>
   )
 }
